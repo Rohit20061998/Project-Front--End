@@ -12,8 +12,7 @@ import AdminPage from './app/components/AdminPage';
 import Login from './app/components/Login';
 import './App.css';
 import AppHome from './app/components/views/home';
-
-
+import UpdateEmployeeComponent from './app/components/UpdateEmployeeComponent'
 
 function App() {  
   return (
@@ -27,6 +26,7 @@ function App() {
       <Route path='/admin' exact component={AdminPage}/>
       <Route path='/Login' exact component={Login}/>
       <Route path='/signup' exact component={SignUp}/> 
+      <Route path='/update-employee/:id' exact component={UpdateEmployeeComponent}/>
     </Switch>
   </Router>
   );

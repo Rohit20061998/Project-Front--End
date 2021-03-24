@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavbarText, NavItem, NavLink } from 'reactstrap';
+import { Collapse, Nav, Navbar, NavbarToggler, NavbarText, NavItem, NavLink } from 'reactstrap';
 //import { Link } from 'react-router-dom';
 
 import { withRouter } from 'react-router-dom';
@@ -56,11 +56,12 @@ class AppNavbar extends Component {
   render() {
     return <Navbar color="light" dark expand="md">
       <Nav className="mr-auto">
-        {this.state.showUser && <NavLink href="/user">User</NavLink>}
-        {this.state.showPM && <NavLink href="/pm">PM</NavLink>}
-        {this.state.showAdmin && <NavLink href="/admin">Admin</NavLink>}
+        {this.state.showUser && <NavLink href="/profile/project-board">Kanban</NavLink>}
+        {this.state.showUser && <NavLink href="/Schedular">Schedular</NavLink>}
+        {this.state.showPM && <NavLink href="/pm">Project</NavLink>}
+        {this.state.showAdmin && <NavLink href="/admin">Users</NavLink>}
       </Nav>
-      <NavbarToggler onClick={this.toggle}/>
+      <NavbarToggler className="bg-secondary" onClick={this.toggle}/>
       <Collapse isOpen={this.state.isOpen} navbar>
         {
           this.state.login ? (

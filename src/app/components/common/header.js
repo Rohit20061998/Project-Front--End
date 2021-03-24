@@ -20,7 +20,7 @@ function AppHeader() {
       <div className="header">
         <div className="logo">
           <BsFillKanbanFill/>
-          <a href="http://google.com">KANBAN</a>
+          <a href="/hero">INSIGHTLY</a>
         </div>
         <div className="mobileHidden">
           <Anchor targetOffset="65">

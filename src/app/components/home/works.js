@@ -36,7 +36,8 @@ class AppWorks extends React.Component {
             footer={null}
             destroyOnClose = {true}
           >
-            <iframe title="What is kanban?" width="100%" height="350" src="https://www.youtube.com/watch?v=iVaFVa7HYj4"></iframe>
+            <iframe title="What is kanban?" width="100%" height="350" src="https://www.youtube.com/embed/Bcid33tgq8A
+          "></iframe>
           </Modal>
         </div>
       </div>

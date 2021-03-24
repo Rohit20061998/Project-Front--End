@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router';
-//import AppNavbar from './AppNavbar';
 import { Container } from 'reactstrap';
 import { Button, Form, FormGroup, Input, Label, Row, Col } from "reactstrap";
 import { Alert } from "react-bootstrap";
 import Authentication from '../services/AuthenticationService'
-import Login from './Login';
 import AppHeader from "./common/header";
 import AppFooter from "./common/footer";
 import { Layout } from 'antd';
+
+
 const { Header,Footer } = Layout;
+
 
 
 const validEmailRegex = RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
@@ -136,7 +137,7 @@ class SignUp extends Component {
       return <Redirect to='Login' />
     }
 
-    const title = <h2 align="center">Sign Up</h2>;
+    const title = <h1 align="center">SIGN UP</h1>;
     const errors = this.state.errors;
 
     let alert = "";
@@ -157,19 +158,30 @@ class SignUp extends Component {
       }
     }
 
+   
+
+ 
+
     return ( 
-      <div id="SignUp" >
+      <div id="SignUp" style={{  
+        backgroundImage:"url('https://images.unsplash.com/photo-1542435503-956c469947f6?ixid=MXwxMjA3fDB8MHxzZWFyY2h8ODB8fG9mZmljZSUyMGJhY2tncm91bmR8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')",
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat'
+      }}>
+  
+    
+
         <Header>
       <AppHeader/>
       </Header>
-        {/*<AppNavbar/>*/}
-        <Container fluid className="signup-block">
+        <Container fluid className="signup-block" >
           <Row>
           <Col sm="12" md={{ size: 4, offset: 4 }}>
           {title}
             <Form onSubmit={this.signUp}>
               <FormGroup controlId="forFirstname">
-                <Label for="firstname">First Name</Label>
+                <Label for="firstname" style={{fontWeight:'bold'}}>First Name</Label>
                 <Input
                   type="text" 
                   placeholder="Enter First Name"
@@ -188,7 +200,7 @@ class SignUp extends Component {
               </FormGroup>
 
               <FormGroup controlId="forLastname">
-                <Label for="lastname">Last Name</Label>
+                <Label for="lastname" style={{fontWeight:'bold'}}>Last Name</Label>
                 <Input
                   type="text" 
                   placeholder="Enter Last Name"
@@ -207,7 +219,7 @@ class SignUp extends Component {
               </FormGroup>
 
               <FormGroup controlId="forUsername">
-                <Label for="username">Username</Label>
+              <Label for="username" style={{fontWeight:'bold'}}>User Name</Label>
                 <Input
                   type="text" 
                   placeholder="Enter UserName"
@@ -226,7 +238,7 @@ class SignUp extends Component {
               </FormGroup>
 
               <FormGroup controlId="formEmail">
-                <Label for="email">Email</Label>
+              <Label for="email" style={{fontWeight:'bold'}}>Email</Label>
                 <Input required
                   type="text" 
                   placeholder="Enter Email"
@@ -245,7 +257,7 @@ class SignUp extends Component {
               </FormGroup>
                
               <FormGroup controlId="formMobileno">
-                <Label for="mobileno">Mobile No</Label>
+              <Label for="mobileno" style={{fontWeight:'bold'}}>Mobile No</Label>
                 <Input required
                   type="text" 
                   placeholder="Enter Mobile no"
@@ -264,7 +276,7 @@ class SignUp extends Component {
               </FormGroup>
               
               <FormGroup controlId="formPassword">
-                <Label for="password">Password</Label>
+              <Label for="password" style={{fontWeight:'bold'}}>Password</Label>
                 <Input required 
                   type="password" 
                   placeholder="Enter Password"
@@ -282,7 +294,7 @@ class SignUp extends Component {
                 }
               </FormGroup>
 
-              <Button variant="primary" type="submit" className="btn bg-primary">
+              <Button variant="primary" type="submit" className="btn bg-primary btn-block">
                 Sign Up
               </Button>
               {
@@ -301,7 +313,7 @@ class SignUp extends Component {
       <AppFooter/>
       </Footer>
       </div>);
+      
   }
 }
-
 export default SignUp;

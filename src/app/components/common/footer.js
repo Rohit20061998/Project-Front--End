@@ -9,7 +9,7 @@ function AppFooter() {
       <div className="footer">
         <div className="logo">
           <BsFillKanbanFill/>
-          <a href="http://google.com">KANBAN</a>
+          <a href="/hero">INSIGHTLY</a>
         </div>
         <ul className="socials">
           <li><a href="https://www.facebook.com/"><i className="fab fa-facebook-f"></i></a></li>
@@ -18,7 +18,7 @@ function AppFooter() {
           <li><a href="https://www.pinterest.com/"><i className="fab fa-pinterest-p"></i></a></li>
           <li><a href="https://www.instagram.com/"><i className="fab fa-instagram"></i></a></li>
         </ul>
-        <div className="copyright">Copyright © 2021 Kanban</div>
+        <div className="copyright">Copyright © 2021 INSIGHTLY</div>
         <BackTop>
           <div className="goTop"><i className="fas fa-arrow-circle-up"></i></div>
         </BackTop>

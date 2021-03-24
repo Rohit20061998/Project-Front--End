@@ -11,6 +11,7 @@ class UserPage extends Component {
       content: "",
       error: ""
     }
+    this.addTask=this.addTask.bind(this);
   }
 
   componentDidMount() {
@@ -24,6 +25,10 @@ class UserPage extends Component {
         }); 
       });
   }
+
+  addTask(){
+    this.props.history.push('/create-task');
+}
 
   render() {
     return (

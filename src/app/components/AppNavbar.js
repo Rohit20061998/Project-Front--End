@@ -57,7 +57,7 @@ class AppNavbar extends Component {
     return <Navbar color="light" dark expand="md">
       <Nav className="mr-auto">
         {this.state.showUser && <NavLink href="/profile/project-board">Kanban</NavLink>}
-        {this.state.showUser && <NavLink href="/user">User</NavLink>}
+        {this.state.showUser && <NavLink href="/Schedular">Schedular</NavLink>}
         {this.state.showPM && <NavLink href="/pm">Project</NavLink>}
         {this.state.showAdmin && <NavLink href="/admin">Users</NavLink>}
       </Nav>

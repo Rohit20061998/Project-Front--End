@@ -5,14 +5,12 @@ import './App.css';
 import { Provider } from "react-redux";
 import store from './store';
 import 'bootstrap/dist/css/bootstrap.min.css';
-//import Home from './app/components/Home';
 import Profile from './app/components/Profile';
 import UserPage from './app/components/UserPage';
 import ProjectManagerPage from './app/components/ProjectManagerPage';
 import SignUp from './app/components/SignUp';
 import AdminPage from './app/components/AdminPage';
 import Login from './app/components/Login';
-import './App.css';
 import AppHome from './app/components/views/home';
 import UpdateEmployeeComponent from './app/components/UpdateEmployeeComponent';
 import CreateEmployeeComponent from './app/components/CreateEmployeeComponent';
@@ -20,6 +18,7 @@ import AddTaskComponent from './app/components/AddTaskComponent';
 import ProjectBoard from './app/components/kanban/components/ProjectBoard';
 import AddProjectTask from './app/components/kanban/components/ProjectTask/AddProjectTask';
 import UpdateProjectTask from './app/components/kanban/components/ProjectTask/UpdateProjectTask';
+import Apps from './Apps';
 
 function App() {  
   return (
@@ -41,6 +40,7 @@ function App() {
       <Route path="/profile/project-board" component={ProjectBoard}></Route>
       <Route path="/profile/addProjectTask" component={AddProjectTask} />
       <Route path="/profile/update-task/:pt_id" component={UpdateProjectTask} />
+      <Route path="/Schedular" component={Apps} />
     </Switch>
     </div>
   </Router>

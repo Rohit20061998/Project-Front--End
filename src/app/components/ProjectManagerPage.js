@@ -15,6 +15,7 @@ class ProjectManagerPage extends Component {
       projectName:""
     }
     this.createProject=this.createProject.bind(this);
+    this.addEmployee=this.addEmployee.bind(this);
   }
 
   changeProjectNameHandler=(event) => {
@@ -45,6 +46,11 @@ BackendService.createProject(project,this.state.projectName).then(res =>{
     });
   }
 
+  addEmployee(){
+    this.props.history.push('/create-employee');
+}
+
+
   /*createProject(){
     this.props.history.push();
 }*/
@@ -54,36 +60,24 @@ BackendService.createProject(project,this.state.projectName).then(res =>{
     return (
       <div>
         <AppNavbar/>
-        <Container fluid>
-          {
-            this.state.content ? (
-              <div style={{marginTop: "20px"}}>
-                <Alert color="info">
-                  <h2>{this.state.content}</h2>
-                </Alert>
-              </div>
-            ) : (
-              <div style={{marginTop: "20px"}}>
-                <Alert color="danger">
-                  {this.state.error}
-                </Alert>
-              </div>
-            )
-          }
-        </Container>
+        <div className = "card col-md-4 offset-md-4 alert alert-primary" style={{marginTop:"13%"}}>                    
+          <div className = "card-body alert alert-primary">
         <form>
-                <Label>Add Project</Label>
-                <Input autoFocus
+                <Label ><h2>Add Project</h2></Label>
+                <Input autoFocus        
                   type="text" 
                   placeholder="Enter Project Name"
                   value={this.state.projectName}
                   onChange={this.changeProjectNameHandler}
                 />
-              <Button variant="primary" onClick={this.createProject} type="submit" className="btn bg-primary">
+              <Button variant="primary" onClick={this.createProject} type="submit" className="btn bg-primary btn-block mt-4">
                 Add Project
               </Button>
-        </form>
-      </div>
+                   <Button  varient="primary" className="btn bg-primary btn-block mt-4 " onClick={this.addEmployee}>Add Employee</Button>
+                    </form>
+                    </div>
+                    </div>
+                    </div>
     );
   }
 }

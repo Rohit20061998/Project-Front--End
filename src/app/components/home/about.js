@@ -29,23 +29,18 @@ function AppAbout() {
       <div className="container-fluid">
         <div className="titleHolder">
           <h2>About Us</h2>
-          <p>The kanban software you love</p>
+          <p>The INSIGHTLY software you love</p>
         </div>
         <div className="contentHolder">
-          <p>
+          <p>A warm welcome to INSIGHTLY.Our company ethos is to provide an outstanding service to you, the customer, alongside top quality service and the latest innovative ideas.
+             With INSIGHTLY you visualize the project plan in dedicated Management Boards and break down the work across one or more Team Boards. 
+             This creates a work hierarchy that spans multiple levels in the organization and creates unmatched transparency across the whole value stream.
+              As teams, complete work on their team boards, the progress, and potential risks are visualized on your management boards automatically.
 
-          A warm welcome to kanban.Our company ethos is to provide an outstanding service to you, the customer, alongside top quality crafting products and the latest innovative ideas.
+<div>Thank you for taking the time to visit our website.
+</div>
 
-We pride ourselves in our design and manufacturing capability and are committed to manufacturing the very best quality products and on trend designs, having spent many years in the industry.
-
-Our retail website offers you many well known brands alongside Kanban Crafts products. If you cannot find what you are looking for please do not hesitate to contact us and we will do our best to locate it for you.
-
-Thank you for taking the time to visit our website.
-
-
-<div>With Best Wishes</div>
-
-<div>Team Kanban.</div></p>
+<div>Team INSIGHTLY.</div></p>
         </div>
         <Row gutter={[16, 16]}>   
           {items.map(item => {

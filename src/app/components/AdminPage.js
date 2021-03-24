@@ -1,7 +1,6 @@
 import AppNavbar from './AppNavbar';
 import React, { Component } from 'react';
-import { Container } from 'reactstrap';
-import { Alert } from "reactstrap";
+
 import BackendService from '../services/BackendService';
 
 class AdminPage extends Component {
@@ -59,43 +58,22 @@ class AdminPage extends Component {
   render() {
     return (
       <div>
+       <AppNavbar/>
       <div>
-        <AppNavbar/>
-        <Container fluid>
-          {
-            this.state.content ? (
-              <div style={{marginTop: "20px"}}>
-                <Alert variant="info">
-                  <h2>{this.state.content}</h2>
-                </Alert>
-              </div>
-            ) : (
-              <div style={{marginTop: "20px"}}>
-                <Alert variant="danger">
-                  {this.state.error}
-                </Alert>
-              </div>
-            )
-          }
-        </Container>
-      </div>
-      <div>
-      <h2 className="test-center">Employee List</h2>
-      <div className="row">
-          <table className="table table-striped table-bordered">
-           
+      <h2 className="test-center">User List</h2>
+      <div className="row" style={{overflowX:"auto"}}>
+          <table className="table table-striped table-bordered alert alert-light">
             <thead>
                 <tr>
-                    <td>Employee Id</td>
-                    <td>Employee First Name</td>
-                    <td>Employee Last Name</td>
-                    <td>Employee Mobile No</td>
-                    <td>Employee email Id</td>
-                    <td>Employee Role</td>
+                    <td>User Id</td>
+                    <th>User First Name</th>
+                    <th>User Last Name</th>
+                    <th>User Mobile No</th>
+                    <th>User email Id</th>
+                    <th>User Role</th>
                     <th>Actions</th>
                 </tr>
-            </thead>
-            
+            </thead>           
             <tbody>
                 {
                     this.state.employees.map(
@@ -117,7 +95,7 @@ class AdminPage extends Component {
             </tbody>
           </table>
       </div>
-   </div>
+      </div>
    </div>
 );
 }

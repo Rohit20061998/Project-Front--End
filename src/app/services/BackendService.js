@@ -23,10 +23,6 @@ getRoles(){
   return axios.get("http://localhost:8082/api/auth/roles");
 }
 
-createEmployee(employee){
-  return axios.post("http://localhost:8082/api/auth/employees",employee);
-}
-
 getEmployeeById(employeeId){
   return axios.get("http://localhost:8082/api/auth/employees"+'/'+employeeId);
 }
@@ -39,9 +35,26 @@ deleteEmployee(employeeId){
   return axios.delete("http://localhost:8082/api/auth/employees/{id}" + '/' + employeeId);
 }
 
+createTask(task)
+{
+  return axios.post("http://localhost:8082/api/v1/task",task);
+}
+
+getTaskById(taskId){
+  return axios.get("http://localhost:8082/api/v1/task"+'/'+taskId);
+}
+
+updateTask(task,taskId){
+  return axios.put("http://localhost:8082/api/v1/task"+"/"+taskId,task);
+} 
+
 createProject(project)
 {
   return axios.post("http://localhost:8082/api/v1/project",project);
+}
+
+createEmployee(employee){
+  return axios.post("http://localhost:8082/api/v1/employee",employee);
 }
 
   async getUserBoard() {

@@ -342,6 +342,29 @@ about
   text-align: center;
 }
 
+.Tabs.nav{
+  background: #e1e1e1;
+}
+
+.Tabs .nav-item {
+  background: rgba(204, 143, 130, .5) !important ;
+  color: rgba(0,0,0,.7);
+}
+
+.Tabs .active {
+  background: #CC8F82!important ;
+  color: white !important;
+  border-color:#CC8F82 !important;
+
+}
+
+.Tabs .nav-item, .Tabs .active {
+  font-family: "Poppins", sans-serif;
+  border-top-left-radius: 10% !important;
+  border-top-right-radius: 10% !important;
+  border: 1px solid rgba(204, 143, 130, .5)!important;
+}
+
 /* 
 how it works
 ------------

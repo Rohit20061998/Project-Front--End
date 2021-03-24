@@ -17,7 +17,8 @@ function AppFeature() {
       <div className="container-fluid">
         <div className="titleHolder">
           <h2>Key Features and Benefits</h2>
-          <p>Obcaecati consequatur libero repudiandae, aperiam itaque laborum!</p>
+          <p>A INSIGHTLY team is only focused on planning flexibility and the work that's actively in progress!
+</p>
         </div>
         <Row gutter={[16, 16]}>
           <Col xs={{ span: 24 }} sm={{ span: 12 }} md={{ span: 8 }}>

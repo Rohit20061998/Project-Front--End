@@ -47,9 +47,17 @@ class Login extends Component {
   }
 
   render() {
+    
     return ( 
+      
+        <div id="SignUp" style={{  
+          backgroundImage:"url('https://images.unsplash.com/photo-1542435503-956c469947f6?ixid=MXwxMjA3fDB8MHxzZWFyY2h8ODB8fG9mZmljZSUyMGJhY2tncm91bmR8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')",
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat'}}>
+    
+      
       <div className="login-block" >
-        {/*<AppNavbar/>*/}
         <Header>
       <AppHeader/>
       </Header>
@@ -103,8 +111,11 @@ class Login extends Component {
         <Footer style={{marginTop:"94px",width:"max-width"}}>
       <AppFooter/>
       </Footer>
+      </div>
       </div>);
+
   }
 }
+
 
 export default Login;

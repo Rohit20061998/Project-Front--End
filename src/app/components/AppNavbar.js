@@ -32,8 +32,8 @@ class AppNavbar extends Component {
       });
   
       this.setState({
-        showUser: true,
-        showPM: roles.includes("ROLE_PM") || roles.includes("ROLE_ADMIN"),
+        showUser: roles.includes("ROLE_USER"),
+        showPM: roles.includes("ROLE_PM"),
         showAdmin: roles.includes("ROLE_ADMIN"),
         login: true,
         username: user.username
@@ -42,8 +42,9 @@ class AppNavbar extends Component {
   }
 
   signOut = () => {
+    window.sessionStorage.setItem("auth",0)
     AuthenticationService.signOut();
-    this.props.history.push('/hero');
+    this.props.history.push('/');
     window.location.reload(); 
   }
    
@@ -56,10 +57,18 @@ class AppNavbar extends Component {
   render() {
     return <Navbar color="light" dark expand="md">
       <Nav className="mr-auto">
-        {this.state.showUser && <NavLink href="/profile/project-board">Kanban</NavLink>}
+        {this.state.showUser && <NavLink href="/profile/project-board1">Kanban</NavLink>}
         {this.state.showUser && <NavLink href="/Schedular">Schedular</NavLink>}
+        {this.state.showPM && <NavLink href="/profile/project-board">Kanban</NavLink>}
+        {this.state.showPM && <NavLink href="/Schedular">Schedular</NavLink>}
         {this.state.showPM && <NavLink href="/pm">Project</NavLink>}
+        {this.state.showPM && <NavLink href="/create-employee">Employees</NavLink>}
+        {this.state.showAdmin && <NavLink href="/profile/project-board2">Kanban</NavLink>}
+        {this.state.showAdmin && <NavLink href="/Schedular">Schedular</NavLink>}
+        {this.state.showAdmin && <NavLink href="/pm1">Project</NavLink>}
+        {this.state.showAdmin && <NavLink href="/create-employee1">Employees</NavLink>}
         {this.state.showAdmin && <NavLink href="/admin">Users</NavLink>}
+
       </Nav>
       <NavbarToggler className="bg-secondary" onClick={this.toggle}/>
       <Collapse isOpen={this.state.isOpen} navbar>
@@ -72,13 +81,13 @@ class AppNavbar extends Component {
                   </NavbarText>
               </NavItem>
               <NavItem>
-                <NavLink href="#" className="text-primary" onClick={this.signOut}>SignOut</NavLink>
+                <NavLink href="/" className="text-primary" onClick={this.signOut}>SignOut</NavLink>
               </NavItem>
             </Nav>                 
           ) : (
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/signin">Login</NavLink>
+                <NavLink href="/Login">Login</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="/signup">SignUp</NavLink>

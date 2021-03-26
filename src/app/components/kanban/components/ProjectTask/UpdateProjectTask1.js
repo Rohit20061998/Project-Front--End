@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import {Link} from 'react-router-dom';
 
-class UpdateProjectTask extends Component {
+class UpdateProjectTask1 extends Component {
 
 
     constructor(){
@@ -40,6 +40,7 @@ class UpdateProjectTask extends Component {
         console.log(taskAfterUpdate);
 
         this.props.updateTask(this.state.taskId,taskAfterUpdate)
+        this.props.history.push("/profile/project-board1");
     }
 
     onChange(e){
@@ -86,7 +87,7 @@ class UpdateProjectTask extends Component {
                            <br/>
                             <form onSubmit={this.onSubmit}>
                             <div className="form-group">
-                                    <input onChange={this.onChange} value={this.state.taskname} type="text" className={classnames("form-control form-control-lg", { "is-invalid": errors.taskname })} name="taskname" placeholder="Project Task name"/>
+                                    <input onChange={this.onChange} value={this.state.taskname} type="text" className={classnames("form-control form-control-lg", { "is-invalid": errors.taskname })} name="taskname" placeholder="Project Task name" readonly="readonly"/>
                                     {
                                         errors.taskname && (
                                             <div className="invalid-feedback">errors.taskname</div>
@@ -94,16 +95,16 @@ class UpdateProjectTask extends Component {
                                     }
                                 </div>
                                 <div className="form-group">
-                                    <input className="form-control form-control-lg" onChange={this.onChange} placeholder="project id" value={this.state.project.projectId} name="project" ></input>
+                                    <input className="form-control form-control-lg" onChange={this.onChange} placeholder="project id" value={this.state.project.projectId} name="project" readonly="readonly" ></input>
                                 </div>
                                 <div className="form-group">
-                                    <input className="form-control form-control-lg" onChange={this.onChange} placeholder="emp id" value={this.state.employee1.empId} name="employee1"></input>
+                                    <input className="form-control form-control-lg" onChange={this.onChange} placeholder="emp id" value={this.state.employee1.empId} name="employee1" readonly="readonly"></input>
                                 </div>
                                 <div className="form-group">
-                                    <input className="form-control form-control-lg" onChange={this.onChange} placeholder="Start Date" value={this.state.startdate} name="startdate"></input>
+                                    <input className="form-control form-control-lg" onChange={this.onChange} placeholder="Start Date" value={this.state.startdate} name="startdate" readonly="readonly"></input>
                                 </div>
                                 <div className="form-group">
-                                    <input className="form-control form-control-lg" onChange={this.onChange} placeholder="End Date" value={this.state.enddate} name="enddate"></input>
+                                    <input className="form-control form-control-lg" onChange={this.onChange} placeholder="End Date" value={this.state.enddate} name="enddate" readonly="readonly"></input>
                                 </div>
                                 <div className="form-group">
                                     <select onChange={this.onChange}  value={this.state.status} className="form-control form-control-lg" name="status">
@@ -116,7 +117,7 @@ class UpdateProjectTask extends Component {
                                 <input onSubmit={this.onSubmit} type="submit" className="btn btn-primary btn-block form-control-lg" />
                             </form>
                             <br/>
-                            <Link to="/profile/project-board" className="btn btn-primary btn-block form-control-lg">
+                            <Link to="/profile/project-board1" className="btn btn-primary btn-block form-control-lg">
                                 Back to Board     
                             </Link>  
                             <br/>
@@ -132,7 +133,7 @@ class UpdateProjectTask extends Component {
     }
 }
 
-UpdateProjectTask.propTypes = {
+UpdateProjectTask1.propTypes = {
     project_task : PropTypes.object.isRequired,
     errors : PropTypes.object.isRequired,
     getTaskById :PropTypes.func.isRequired,
@@ -144,4 +145,4 @@ const mapStateTpProps = state => ({
     errors : state.errors
 })
 
-export default connect( /** state */ mapStateTpProps ,  {getTaskById , updateTask}) ( UpdateProjectTask);
+export default connect( /** state */ mapStateTpProps ,  {getTaskById , updateTask}) ( UpdateProjectTask1);

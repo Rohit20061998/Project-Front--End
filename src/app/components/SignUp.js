@@ -4,7 +4,7 @@ import { Container } from 'reactstrap';
 import { Button, Form, FormGroup, Input, Label, Row, Col } from "reactstrap";
 import { Alert } from "react-bootstrap";
 import Authentication from '../services/AuthenticationService'
-import AppHeader from "./common/header";
+import AppHeader1 from "./common/header1";
 import AppFooter from "./common/footer";
 import { Layout } from 'antd';
 
@@ -14,7 +14,7 @@ const { Header,Footer } = Layout;
 
 
 const validEmailRegex = RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
-
+const validPasswordRegex = RegExp(/^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8,}$/i)
 const validateForm = (errors) => {
   let valid = true;
   Object.values(errors).forEach(
@@ -85,9 +85,9 @@ class SignUp extends Component {
         break;
          case 'password': 
         errors.password = 
-          value.length < 8
-            ? 'Password must be 8 characters long!'
-            : '';
+        validPasswordRegex.test(value)
+            ? ''
+            : 'Password must contain two uppercase letters ,one special case letter,two digits,three lowercase letters,length should be more than or equal to 8.';
         break;
       default:
         break;
@@ -125,7 +125,7 @@ class SignUp extends Component {
           
           this.setState({
             successful: false,
-            message: error.toString()
+            message:"Please check user details"
           });
         }
       );  
@@ -169,11 +169,8 @@ class SignUp extends Component {
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat'
       }}>
-  
-    
-
-        <Header>
-      <AppHeader/>
+    <Header>
+      <AppHeader1/>
       </Header>
         <Container fluid className="signup-block" >
           <Row>
@@ -181,7 +178,7 @@ class SignUp extends Component {
           {title}
             <Form onSubmit={this.signUp}>
               <FormGroup controlId="forFirstname">
-                <Label for="firstname" style={{fontWeight:'bold'}}>First Name</Label>
+                <Label className="d-flex justify-content-left alignitems-center"for="firstname" style={{fontWeight:'bold'}}>First Name</Label>
                 <Input
                   type="text" 
                   placeholder="Enter First Name"
@@ -200,7 +197,8 @@ class SignUp extends Component {
               </FormGroup>
 
               <FormGroup controlId="forLastname">
-                <Label for="lastname" style={{fontWeight:'bold'}}>Last Name</Label>
+                <Label className="d-flex justify-content-left alignitems-center"
+for="lastname" style={{fontWeight:'bold'}}>Last Name</Label>
                 <Input
                   type="text" 
                   placeholder="Enter Last Name"
@@ -219,7 +217,8 @@ class SignUp extends Component {
               </FormGroup>
 
               <FormGroup controlId="forUsername">
-              <Label for="username" style={{fontWeight:'bold'}}>User Name</Label>
+              <Label className="d-flex justify-content-left alignitems-center"
+for="username" style={{fontWeight:'bold'}}>User Name</Label>
                 <Input
                   type="text" 
                   placeholder="Enter UserName"
@@ -238,7 +237,8 @@ class SignUp extends Component {
               </FormGroup>
 
               <FormGroup controlId="formEmail">
-              <Label for="email" style={{fontWeight:'bold'}}>Email</Label>
+              <Label className="d-flex justify-content-left alignitems-center"
+for="email" style={{fontWeight:'bold'}}>Email</Label>
                 <Input required
                   type="text" 
                   placeholder="Enter Email"
@@ -257,7 +257,8 @@ class SignUp extends Component {
               </FormGroup>
                
               <FormGroup controlId="formMobileno">
-              <Label for="mobileno" style={{fontWeight:'bold'}}>Mobile No</Label>
+              <Label className="d-flex justify-content-left alignitems-center"
+for="mobileno" style={{fontWeight:'bold'}}>Mobile No</Label>
                 <Input required
                   type="text" 
                   placeholder="Enter Mobile no"
@@ -276,7 +277,8 @@ class SignUp extends Component {
               </FormGroup>
               
               <FormGroup controlId="formPassword">
-              <Label for="password" style={{fontWeight:'bold'}}>Password</Label>
+              <Label className="d-flex justify-content-left alignitems-center"
+for="password" style={{fontWeight:'bold'}}>Password</Label>
                 <Input required 
                   type="password" 
                   placeholder="Enter Password"
@@ -305,6 +307,10 @@ class SignUp extends Component {
                 )
               }
               {alert}
+              <span className='form-input-login'>
+          Already have an account? <a href='/Login'>Sign In</a>
+        </span>
+
             </Form>
             </Col>
           </Row>

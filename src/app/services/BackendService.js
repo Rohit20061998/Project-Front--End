@@ -19,6 +19,18 @@ getEmployees(){
   return axios.get("http://localhost:8082/api/auth/employees");
 }
 
+getEmployee(){
+  return axios.get("http://localhost:8082/api/v1/employee");
+}
+
+getProject(){
+  return axios.get("http://localhost:8082/api/v1/project1");
+}
+
+getEmployee1(){
+  return axios.get("http://localhost:8082/api/v1/employee1");
+}
+
 getRoles(){
   return axios.get("http://localhost:8082/api/auth/roles");
 }
@@ -32,7 +44,7 @@ updateEmployee(employee,employeeId){
 }
 
 deleteEmployee(employeeId){
-  return axios.delete("http://localhost:8082/api/auth/employees/{id}" + '/' + employeeId);
+  return axios.delete("http://localhost:8082/api/auth/delete" + '/' + employeeId);
 }
 
 createTask(task)

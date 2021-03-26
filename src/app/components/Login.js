@@ -6,7 +6,7 @@ import { Form, Alert, FormGroup, Input, Label, Row, Col } from "reactstrap";
 import {Button} from 'react-bootstrap';
 import AuthenticationService from "../services/AuthenticationService";
 import avatar from '../../avatar.png';
-import AppHeader from "./common/header";
+import AppHeader1 from "./common/header1";
 import AppFooter from "./common/footer";
 import { Layout } from 'antd';
 const { Header,Footer } = Layout;
@@ -28,6 +28,11 @@ class Login extends Component {
     let val = event.target.value;
     this.setState({[nam]: val});
   }
+
+  componentDidMount() {
+    window.sessionStorage.setItem("auth",1); 
+  }
+
 
   doLogin = async (event) => {
     event.preventDefault();
@@ -59,7 +64,7 @@ class Login extends Component {
       
       <div className="login-block" >
         <Header>
-      <AppHeader/>
+      <AppHeader1/>
       </Header>
         <Container fluid>
           <Row style={{marginTop:"100px"}}>
@@ -103,6 +108,9 @@ class Login extends Component {
                   </Alert>
                 )
               }
+              <span className='form-input-login'>
+         New user? <a href='/signUp'>Create an account</a>
+        </span>
             </Form>
             </Col>
             <Col lg="3"></Col>

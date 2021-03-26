@@ -30,18 +30,26 @@ class Profile extends Component {
       user.authorities.forEach(authority => {
         roles = roles + " " + authority.authority
       });
-
+     
+    
+       
       userInfo = (
-                <div style={{marginTop:"20px"}}>
-                  <Alert variant="info">
-                    <h2>User Info</h2>
+          <>
+          <div className="row bg-danger " style={{ height: "100%"}}>
+          <div className="col-3"style={{ height: "250px" }}></div>
+          <div className="col-6 d-flex flex-column justify-content-center align-items-center text-light"style={{ height: "250px" }}>
+            <div style={{ fontSize: "3rem"}}>User Info</div>
+            <div className="  "style={{ textAlign: "center" }}>
+              
                     <ul>
-                      <li>Username: {user.username}</li>
-                      <li>Access Token: {user.accessToken}</li>
-                      <li>Authorities: {roles}</li>
+                      <li  style={{ fontSize: "2rem"}}>Username: {user.username}</li>
+                     
+                      <li  style={{ fontSize: "2rem"}}>Authorities: {roles}</li>
                     </ul>
-                  </Alert>
-                </div>
+                    </div>
+                    </div>
+                  </div>
+               </>  
               );
     } else { // not login
       userInfo = <div style={{marginTop:"20px"}}>

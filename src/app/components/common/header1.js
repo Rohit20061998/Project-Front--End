@@ -4,7 +4,7 @@ import { BsFillKanbanFill } from 'react-icons/bs';
 const { Link } = Anchor;
 
 
-function AppHeader() {
+function AppHeader1() {
   const [visible, setVisible] = useState(false);
 
   const showDrawer = () => {
@@ -24,12 +24,7 @@ function AppHeader() {
         </div>
         <div className="mobileHidden">
           <Anchor targetOffset="65">
-            <Link href="#hero" title="Home" />
-            <Link href="#about" title="About" />
-            <Link href="#feature" title="Features" />
-            <Link href="#works" title="How it works" />
-            <Link href="#faq" title="FAQ" />
-            <Link href="#contact" title="Contact" />
+            <Link href="/" title="Home" />
             <Link href="/signUp" title="Sign Up" />
             <Link href="/Login" title="Sign in" /> 
           </Anchor>
@@ -45,12 +40,7 @@ function AppHeader() {
             visible={visible}
           >
             <Anchor targetOffset="65">
-              <Link href="#hero" title="Home" />
-              <Link href="#about" title="About" />
-              <Link href="#feature" title="Features" />
-              <Link href="#works" title="How it works" />
-              <Link href="#faq" title="FAQ" />
-              <Link href="#contact" title="Contact" />
+              <Link href="/" title="Home" />
               <Link href="/signUp" title="Sign Up" />
               <Link href="/Login" title="Sign in" /> 
             </Anchor>
@@ -61,4 +51,4 @@ function AppHeader() {
   );
 }
 
-export default AppHeader;
+export default AppHeader1;

@@ -3,6 +3,7 @@ import Scheduler from './app/components/Schedular/Scheduler';
 import Toolbar from './app/components/Schedular/Toolbar';
 import MessageArea from './app/components/Schedular/MessageArea/MessageArea';
 import './App.css';
+import AppNavbar from './app/components/AppNavbar';
 
 const data = [
     { start_date:'2020-06-10 6:00', end_date:'2020-06-10 8:00', text:'Event 1', id: 1},
@@ -45,6 +46,7 @@ class Apps extends Component {
         const { currentTimeFormatState, messages } = this.state;
         return (
             <div>
+                <AppNavbar />
                 <div className="tool-bar">
                     <Toolbar
                         timeFormatState={currentTimeFormatState}

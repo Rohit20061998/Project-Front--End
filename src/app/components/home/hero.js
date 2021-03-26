@@ -1,10 +1,6 @@
 import React from 'react';
-import AppHeader from '../common/header';
 import { Button } from 'antd';
 import { Carousel } from 'antd';
-import AppFooter from '../common/footer';
-import Login from '../Login';
-
 
 const items = [
   {

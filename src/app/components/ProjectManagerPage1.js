@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Button,Input, Label} from "reactstrap";
 import BackendService from '../services/BackendService';
 
-class ProjectManagerPage extends Component {
+class ProjectManagerPage1 extends Component {
   
   constructor(props) {
     super(props);
@@ -26,10 +26,9 @@ class ProjectManagerPage extends Component {
   createProject=(e)=>{
     e.preventDefault();
     let project={projectName: this.state.projectName};
-    console.log('employee =>'+JSON.stringify(project)); 
-    BackendService.createProject(project,this.state.projectName).then(res =>{
-    this.props.history.push('/pm');
-    window.location.reload(false);
+console.log('employee =>'+JSON.stringify(project)); 
+BackendService.createProject(project,this.state.projectName).then(res =>{
+  this.props.history.push('/pm');
   }
   );}
 
@@ -69,23 +68,8 @@ class ProjectManagerPage extends Component {
     return (
       <div>
         <AppNavbar/>
-        <div className = "card col-md-4 offset-md-4 alert alert-primary" style={{marginTop:"3%"}}>                    
-          <div className = "card-body alert alert-primary">
-        <form>
-                <Label ><h2>Add Project</h2></Label>
-                <Input autoFocus        
-                  type="text" 
-                  placeholder="Enter Project Name"
-                  value={this.state.projectName}
-                  onChange={this.changeProjectNameHandler}
-                />
-              <Button variant="primary" onClick={this.createProject} type="submit" className="btn bg-primary btn-block mt-4">
-                Add Project
-              </Button>
-                    </form>
-                    </div>
-                    </div>
-                    <div>
+        <br/>
+      <div>
       <h2 className="test-center">Project List</h2>
       <div className="row" style={{overflowX:"auto"}} >
           <table className="table table-striped table-bordered alert alert-light" >
@@ -118,4 +102,4 @@ class ProjectManagerPage extends Component {
   }
 }
 
-export default ProjectManagerPage;
+export default ProjectManagerPage1;

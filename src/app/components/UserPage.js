@@ -15,6 +15,11 @@ class UserPage extends Component {
   }
 
   componentDidMount() {
+
+    if(window.sessionStorage.getItem("auth")!=1){
+      this.props.history.push("/");
+    }
+
     BackendService.getUserBoard()
       .then( response => {
         this.setState({content: response.data})

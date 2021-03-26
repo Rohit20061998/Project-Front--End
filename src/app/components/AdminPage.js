@@ -18,6 +18,11 @@ class AdminPage extends Component {
   }
 
   componentDidMount() {
+
+    if(window.sessionStorage.getItem("auth")!=1){
+      this.props.history.push("/");
+    }
+
     BackendService.getAdminBoard()
       .then( response => {
         this.setState({
@@ -36,7 +41,7 @@ class AdminPage extends Component {
 
   BackendService.getRoles().then((res)=>{
     this.setState({roles:res.data});
-});
+    });
 
     }
 
@@ -71,7 +76,7 @@ class AdminPage extends Component {
                     <th>User Mobile No</th>
                     <th>User email Id</th>
                     <th>User Role</th>
-                    <th>Actions</th>
+                    <th>Update</th>
                 </tr>
             </thead>           
             <tbody>
@@ -87,7 +92,6 @@ class AdminPage extends Component {
                         <td>{employee.role.name}</td>
                         <td>
                             <button onClick={() =>this.editEmployee(employee.id)} className="btn btn-info">Update</button>
-                            <button style={{marginLeft: "10px"}} onClick={ () => this.deleteEmployee(employee.id)} className="btn btn-danger">Delete </button>
                         </td>
                     </tr>
                     )

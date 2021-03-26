@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import ProjectTaskItem from "./ProjectTask/PorjectTaskItem";
+import ProjectTaskItem from "./ProjectTask/PorjectTaskItem1";
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getAllTask } from '../actions/projectTaskActions';
 import AppNavbar from '../../AppNavbar';
 
-class ProjectBoard extends Component {
+class ProjectBoard1 extends Component {
     componentDidMount() {
 
         if(window.sessionStorage.getItem("auth")!=1){
@@ -88,14 +88,10 @@ class ProjectBoard extends Component {
 
        BoardContent =  BoardAlgorithms(project_tasks);
         return (
-          <div >
+          <div>
                      <AppNavbar/>
                      <br/>
                 <div className="container">
-                <Link to="/profile/addProjectTask" className="btn btn-primary mb-3">
-                    <i className="fas fa-plus-circle d-flex justify-content-left alignitems-center"> ADD Task</i>
-                </Link>
-                <br /><hr />
                 {BoardContent}
                 </div>
             </div>
@@ -113,4 +109,4 @@ const mapToStateProp = state => ({
     project_tasks: state.project_tasks
 })
 
-export default connect(/* state */ mapToStateProp, { getAllTask }) (ProjectBoard);
+export default connect(/* state */ mapToStateProp, { getAllTask }) (ProjectBoard1);

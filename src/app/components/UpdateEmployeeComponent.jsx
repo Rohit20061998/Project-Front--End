@@ -23,6 +23,11 @@ class UpdateEmployeeComponent extends Component {
     }
 
     componentDidMount(){
+
+        if(window.sessionStorage.getItem("auth")!=1){
+            this.props.history.push("/");
+          }      
+
         BackendService.getEmployeeById(this.state.id).then((res)=>{
             let employee=res.data;
             this.setState({firstname: employee.firstname,lastname: employee.lastname,username: employee.username,
@@ -66,7 +71,7 @@ class UpdateEmployeeComponent extends Component {
     }
 
      cancel(){
-       this.props.history.push('/employees');
+       this.props.history.push('/admin');
      }
  
      render() {
@@ -108,8 +113,12 @@ class UpdateEmployeeComponent extends Component {
                                    </div> 
                                    <div className="form-group">
                                       <label>Role:</label>
-                                      <input placeholder="role" name="role" className="form-control"
-                                         value={this.state.role} onChange={this.changeRoleHandler}/>
+                                         <select onChange={this.changeRoleHandler}  value={this.state.role} className="form-control form-control-lg" name="role">
+                                        <option value="">Select Status</option>
+                                        <option value="ROLE_USER">User</option>
+                                        <option value="ROLE_PM">Project Manager</option>
+                                        <option value="ROLE_ADMIN">Admin</option>
+                                    </select>
                                    </div> 
   
                                    <button className="btn btn-success" onClick={this.updateEmployee}>save</button>

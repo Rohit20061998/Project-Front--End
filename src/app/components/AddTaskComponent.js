@@ -52,6 +52,11 @@ changeStatusHandler=(event)=>{
   );}
 
   componentDidMount() {
+
+    if(window.sessionStorage.getItem("auth")!=1){
+      this.props.history.push("/");
+    }
+
     BackendService.getPmBoard()
     .then( response => {
       this.setState({
